@@ -1,0 +1,376 @@
+#body { 
+background-color: #000; 
+} 
+#contenedor { 
+width: 700px; 
+margin: 0 auto; 
+} 
+#contenido { 
+float: left; 
+background-color: #FFF; 
+width: 450px; 
+margin: 0px 5px 5px 0px; 
+padding: 10px; 
+} 
+#right { 
+float: right; 
+width: 200px; 
+background-color: #FFF; 
+margin: 0px 0px 5px 0px; 
+padding: 10px; 
+} 
+.box { 
+height: 150px; 
+} 
+#header { 
+clear: both; 
+background-color: #FFF; 
+} 
+#menu { 
+float: left; 
+list-style: none; 
+margin: 5px 0px 5px 0px; 
+padding: 0; 
+width: 100%; 
+background-color: #f0f0f0; 
+} 
+#menu li { 
+float: left; 
+margin: 1px 0px 1px 0px; 
+padding: 0; 
+border-right: 1px dashed; 
+} 
+#menu a { 
+display: block; 
+float: left; 
+margin: 0; 
+padding: 5px 9px; 
+text-decoration:none;
+	outline:none;
+	color:#5D5D5; 
+} 
+#menu a:hover {  
+text-decoration:underline;
+} 
+#footer { 
+clear:both; 
+background-color: #FFF; 
+padding: 10px; 
+width: 680px; 
+}
+#widget{
+width: 200px;
+float: left;
+}
+#separador_widget{
+width: 200px;
+height: 20px;
+float: left;
+}
+#titulo_widget{
+width: 200px;
+height: 20px;
+float: left;
+text-align: center;
+background-color: #000;
+color: #FFF;
+}
+#contenido_widget{
+width: 200px;
+height: 20px;
+float: left;
+text-align: left;
+background-color: #F0F0F0;
+}
+/*----------------------------
+	Menu
+-----------------------------*/
+
+
+.fancyNav{
+	/* Affects the UL element */
+	overflow: hidden;
+	display: inline-block;
+}
+
+.fancyNav li{
+	/* Specifying a fallback color and we define CSS3 gradients for the major browsers: */
+	
+	background-color: #f0f0f0;
+	background-image: -webkit-gradient(linear,left top, left bottom,from(#fefefe), color-stop(0.5,#f0f0f0), color-stop(0.51, #e6e6e6));
+	background-image: -moz-linear-gradient(#fefefe 0%, #f0f0f0 50%, #e6e6e6 51%);
+	background-image: -o-linear-gradient(#fefefe 0%, #f0f0f0 50%, #e6e6e6 51%);
+	background-image: -ms-linear-gradient(#fefefe 0%, #f0f0f0 50%, #e6e6e6 51%);
+	background-image: linear-gradient(#fefefe 0%, #f0f0f0 50%, #e6e6e6 51%);
+	
+	border-right: 1px solid rgba(9, 9, 9, 0.125);
+	
+	/* Adding a 1px inset highlight for a more polished efect: */
+	
+	box-shadow: 1px -1px 0 rgba(255, 255, 255, 0.6) inset;
+	-moz-box-shadow: 1px -1px 0 rgba(255, 255, 255, 0.6) inset;
+	-webkit-box-shadow: 1px -1px 0 rgba(255, 255, 255, 0.6) inset;
+	
+	position:relative;
+	
+	float: left;
+	list-style: none;
+}
+
+.fancyNav li:after{
+
+	/* This creates a pseudo element inslide each LI */	
+	
+	content:'.';
+	text-indent:-9999px;
+	overflow:hidden;
+	position:absolute;
+	width:100%;
+	height:100%;
+	top:0;
+	left:0;
+	z-index:1;
+	opacity:0;
+	
+	/* Gradients! */
+	
+	background-image:-webkit-gradient(linear, left top, right top, from(rgba(168,168,168,0.5)),color-stop(0.5,rgba(168,168,168,0)), to(rgba(168,168,168,0.5)));
+	background-image:-moz-linear-gradient(left, rgba(168,168,168,0.5), rgba(168,168,168,0) 50%, rgba(168,168,168,0.5));
+	background-image:-o-linear-gradient(left, rgba(168,168,168,0.5), rgba(168,168,168,0) 50%, rgba(168,168,168,0.5));
+	background-image:-ms-linear-gradient(left, rgba(168,168,168,0.5), rgba(168,168,168,0) 50%, rgba(168,168,168,0.5));
+	background-image:linear-gradient(left, rgba(168,168,168,0.5), rgba(168,168,168,0) 50%, rgba(168,168,168,0.5));
+	
+	/* Creating borders with box-shadow. Useful, as they don't affect the size of the element. */
+	
+	box-shadow:-1px 0 0 #a3a3a3,-2px 0 0 #fff,1px 0 0 #a3a3a3,2px 0 0 #fff;
+	-moz-box-shadow:-1px 0 0 #a3a3a3,-2px 0 0 #fff,1px 0 0 #a3a3a3,2px 0 0 #fff;
+	-webkit-box-shadow:-1px 0 0 #a3a3a3,-2px 0 0 #fff,1px 0 0 #a3a3a3,2px 0 0 #fff;
+	
+	/* This will create a smooth transition for the opacity property */
+	
+	-moz-transition:0.25s all;
+	-webkit-transition:0.25s all;
+	-o-transition:0.25s all;
+	transition:0.25s all;
+}
+
+/* Treating the first LI and li:after elements separately */
+
+.fancyNav li:first-child{
+	border-radius: 4px 0 0 4px;
+}
+
+.fancyNav li:first-child:after,
+.fancyNav li.selected:first-child:after{
+	box-shadow:1px 0 0 #a3a3a3,2px 0 0 #fff;
+	-moz-box-shadow:1px 0 0 #a3a3a3,2px 0 0 #fff;
+	-webkit-box-shadow:1px 0 0 #a3a3a3,2px 0 0 #fff;
+	
+	border-radius:4px 0 0 4px;
+}
+
+.fancyNav li:last-child{
+	border-radius: 0 4px 4px 0;
+}
+
+/* Treating the last LI and li:after elements separately */
+
+.fancyNav li:last-child:after,
+.fancyNav li.selected:last-child:after{
+	box-shadow:-1px 0 0 #a3a3a3,-2px 0 0 #fff;
+	-moz-box-shadow:-1px 0 0 #a3a3a3,-2px 0 0 #fff;
+	-webkit-box-shadow:-1px 0 0 #a3a3a3,-2px 0 0 #fff;
+	
+	border-radius:0 4px 4px 0;
+}
+
+.fancyNav li:hover:after,
+.fancyNav li.selected:after,
+.fancyNav li:target:after{
+	/* This property triggers the CSS3 transition */
+	opacity:1;
+}
+
+.fancyNav:hover li.selected:after,
+.fancyNav:hover li:target:after{
+	/* Hides the targeted li when we are hovering on the UL */
+	opacity:0;
+}
+
+.fancyNav li.selected:hover:after,
+.fancyNav li:target:hover:after{
+	opacity:1 !important;
+}
+
+/* Styling the anchor elements */
+
+.fancyNav li a{
+	color: #5d5d5d;
+	display: inline-block;
+	font: 13px/1 Lobster,Arial,sans-serif;
+	padding: 10px 35px 14px;
+	position: relative;
+	text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.6);
+	z-index:2;
+	text-decoration:none !important;
+	white-space:nowrap;
+}
+
+.fancyNav a.homeIcon{
+	background:url('../img/home.png') no-repeat center center;
+	display: block;
+	overflow: hidden;
+	padding-left: 12px;
+	padding-right: 12px;
+	text-indent: -9999px;
+	width: 16px;
+}
+.fancyNav a.faqIcon{
+	background:url('../img/faq.png') no-repeat center center;
+	display: block;
+	overflow: hidden;
+	padding-left: 12px;
+	padding-right: 12px;
+	text-indent: -9999px;
+	width: 16px;
+}
+/*----------------------------
+	fin menu
+-----------------------------*/
+/* Easy Slider */
+
+	
+#slider ul, #slider li,
+	#slider2 ul, #slider2 li{
+		
+margin:0;
+		
+padding:0;
+		
+list-style:none;
+		
+}
+	
+#slider2{
+margin-top:1em;
+}
+	
+#slider li, #slider2 li{
+ 
+		/*define width and height of list item (slide)
+ entire slider area will adjust according to the parameters provided here
+	*/
+
+width:700px;
+		
+height:241px;
+
+		
+overflow:hidden; 
+		
+}	
+	
+#prevBtn, #nextBtn,
+	#slider1next, #slider1prev{
+display:block;
+		
+width:30px;
+
+height:77px;
+
+position:absolute;
+		
+left:-5px;
+	
+top:150px;
+		
+z-index:1000;
+		
+}	
+	
+#nextBtn, #slider1next{
+left:743px;
+		
+}														
+	
+#prevBtn a, #nextBtn a,
+	#slider1next a, #slider1prev a{
+display:block;
+
+position:relative;
+		
+width:30px;
+		
+height:77px;
+		
+		
+}	
+	
+#nextBtn a, #slider1next a{ 
+		
+
+		
+}	
+		
+	
+/* numeric controls */
+ol#controls{
+
+margin:1em 0;
+		
+padding:0;
+		
+height:28px;	
+		
+}
+	
+ol#controls li{
+		
+margin:0 10px 0 0; 
+		
+padding:0;
+		
+float:left;
+
+list-style:none;
+		
+height:28px;
+		
+line-height:28px;
+		
+}
+	
+ol#controls li a{
+		
+float:left;
+		
+height:28px;
+		
+line-height:28px;
+		
+border:1px solid #ccc;
+		
+background:#DAF3F8;
+		
+color:#555;
+		
+padding:0 10px;
+		
+text-decoration:none;
+		
+}
+	
+ol#controls li.current a{
+		
+background:#5DC9E1;
+		
+color:#fff;
+		
+}
+	
+ol#controls li a:focus, #prevBtn a:focus, #nextBtn a:focus{
+outline:none;
+}
+	
+
+/* // Easy Slider */

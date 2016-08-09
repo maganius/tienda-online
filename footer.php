@@ -1,0 +1,1 @@
+<center>Derechos reservados de Tienda Online xXRIMOXx</center>  
